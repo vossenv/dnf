@@ -1,0 +1,76 @@
+base_model = {
+   "version":"0.5.3",
+   "metadata":{
+      "date":{
+         "year":2023,
+         "month":9,
+         "day":15,
+         "hour":12,
+         "minute":10,
+         "second":37
+      },
+      "loudness": 65,
+      "gain":0.5,
+      "name":"R",
+      "modeled_by":"Danimae Vossen",
+      "gear_type":"amp",
+      "gear_make":"Mesa",
+      "gear_model":"Dual Rectifier 3ch",
+      "tone_type":"high gain"
+   },
+   "architecture":"WaveNet",
+   "config":{
+      "layers":[
+         {
+            "input_size":1,
+            "condition_size":1,
+            "head_size":8,
+            "channels":16,
+            "kernel_size":3,
+            "dilations":[
+               1,
+               2,
+               4,
+               8,
+               16,
+               32,
+               64,
+               128,
+               256,
+               512
+            ],
+            "activation":"Tanh",
+            "gated":False,
+            "head_bias":False
+         },
+         {
+            "input_size":16,
+            "condition_size":1,
+            "head_size":1,
+            "channels":8,
+            "kernel_size":3,
+            "dilations":[
+               1,
+               2,
+               4,
+               8,
+               16,
+               32,
+               64,
+               128,
+               256,
+               512
+            ],
+            "activation":"Tanh",
+            "gated":False,
+            "head_bias":True
+         }
+      ],
+      "head":"None",
+      "head_scale":0.02
+   },
+   "weights":[
+
+   ],
+   "sample_rate":48000.0
+}
